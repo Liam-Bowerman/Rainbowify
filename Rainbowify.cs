@@ -2,6 +2,7 @@ namespace Rainbows
 {
     public class Rainbowify
     {
+        //Rainbowify.Write() and Rainbowify.WriteLine() work the same as Console.Write() and Console.WriteLine() *essentially
         public static string Write(string userTextToMakeRainbow)
         {
             int i = 1;
