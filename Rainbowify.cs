@@ -2,7 +2,7 @@ namespace Rainbows
 {
     public class Rainbowify
     {
-        public static string Write(string userTextToMakeRainbow)
+        public static void Write(string userTextToMakeRainbow)
         {
             int i = 1;
             foreach (char c in userTextToMakeRainbow)
@@ -44,9 +44,8 @@ namespace Rainbows
                 }
                 Console.ForegroundColor = ConsoleColor.White;
             }
-            return ""; 
         }
-        public static string WriteLine(string userTextToMakeRainbow)
+        public static void WriteLine(string userTextToMakeRainbow)
         {
             int i = 1;
             foreach (char c in userTextToMakeRainbow)
@@ -89,10 +88,8 @@ namespace Rainbows
                 Console.ForegroundColor = ConsoleColor.White;
             }
             Console.WriteLine("");
-            return "";
-
         }
-        public static string WriteColor(string userTextToMakeRainbow, int red, int green, int blue)
+        public static void WriteColor(string userTextToMakeRainbow, int red, int green, int blue)
         {
             foreach (char c in userTextToMakeRainbow)
             {
@@ -100,9 +97,8 @@ namespace Rainbows
                 Console.Write(foreColor + c);
                 Console.ForegroundColor = ConsoleColor.White;
             }
-            return ""; 
         }
-        public static string WriteLineColor(string userTextToMakeRainbow, int red, int green, int blue)
+        public static void WriteLineColor(string userTextToMakeRainbow, int red, int green, int blue)
         {
             foreach (char c in userTextToMakeRainbow)
             {
@@ -111,7 +107,6 @@ namespace Rainbows
                 Console.ForegroundColor = ConsoleColor.White;
             }
             Console.WriteLine("");
-            return ""; 
         }
     }
 }
