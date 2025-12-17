@@ -41,13 +41,13 @@ namespace Rainbows
                 }
                 Console.ForegroundColor = ConsoleColor.White;
             }
-            return "";
+            return null;
         }
         public static string WriteLine(string userTextToMakeRainbow)
         {
             Write(userTextToMakeRainbow);
             Console.WriteLine("");
-            return "";
+            return null;
         }
         public static string WriteColor(string userTextToMakeRainbow, int red, int green, int blue)
         {
@@ -57,13 +57,13 @@ namespace Rainbows
                 Console.Write(foreColor + c);
                 Console.ForegroundColor = ConsoleColor.White;
             }
-            return "";
+            return null;
         }
         public static string WriteLineColor(string userTextToMakeRainbow, int red, int green, int blue)
         {
             WriteColor(userTextToMakeRainbow, red, green, blue);
             Console.WriteLine("");
-            return "";
+            return null;
         }
     }
 }
