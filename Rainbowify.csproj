@@ -5,6 +5,10 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <version>1.1.2</version>
+    <Description>
+      By using the power of rainbows this NuGet package allows you to make text rainbow or specific colors using RGB.
+      In addition to this, you can also make console text change colors using "Rainbowify.Rainbows("example text");"
+    </Description>
     <Nullable>enable</Nullable>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
