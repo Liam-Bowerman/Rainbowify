@@ -6,9 +6,9 @@ Make sure your code has "using Rainbows;" in it so you can use Rainbowify corect
 The text Entered into Rainbowify WILL NOT continue to change colors after being printed once.
 
 ## Usage Example
-//To make rainbow text use "Rainbowify.WriteLine("enter text here");"
-//For more options you can also use "Rainbowify.Write("enter text here");"
+//To make rainbow text use "Rainbowify.WriteLine("example text");"
+//For more options you can also use "Rainbowify.Write("example text");"
 
 //If you just want a simple way to have different collor text in the console use either of the following lines but make sure to include text and the rgb scale of the color you want:
-//Rainbowify.WriteLineColor("enter tect here", int, int, int);"
-//Rainbowify.WriteColor("enter tect here", int, int, int);"
+//Rainbowify.WriteLineColor("example text", int, int, int);"
+//Rainbowify.WriteColor("example text", int, int, int);"
