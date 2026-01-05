@@ -1,14 +1,14 @@
 ## This is a program that makes text into a rainbow (or user specified color)
 
-- To 'Rainbowify' your text make sure to have ‘using Rainbows’ in your code.
-- You can do Write or WriteLine as follows:
+Make sure your code has "using Rainbows;" in it so you can use Rainbowify corectly!
 
-Rainbowify.Write("insert text");
 
-Rainbowify.WriteLine("insert text");
+The text Entered into Rainbowify WILL NOT continue to change colors after being printed once.
 
-- You can also print lines in specific colors by using the following code (the ints are inputs for rgb colors):
+## Usage Example
+//To make rainbow text use "Rainbowify.WriteLine("enter text here");"
+//For more options you can also use "Rainbowify.Write("enter text here");"
 
-Rainbowify.WriteColor("insert text", int, int, int);
-
-Rainbowify.WriteLineColor("insert text", int, int, int);
+//If you just want a simple way to have different collor text in the console use either of the following lines but make sure to include text and the rgb scale of the color you want:
+//Rainbowify.WriteLineColor("enter tect here", int, int, int);"
+//Rainbowify.WriteColor("enter tect here", int, int, int);"
