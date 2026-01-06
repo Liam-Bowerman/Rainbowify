@@ -2,7 +2,7 @@
 
 This package is only usable in c#.
 
-If there are issues with compatability or if the code isn't working please email ljbowerman09@gmail.com.
+If there are issues with compatability or if the code isn't working please email ak3m1.h3art@gmail.com.
 
 ## Usage
 
