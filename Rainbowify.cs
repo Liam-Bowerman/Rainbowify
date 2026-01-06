@@ -81,7 +81,7 @@ namespace Rainbows
                 }
                 Console.ForegroundColor = ConsoleColor.White;
             }
-            Thread.Sleep(100);
+            Thread.Sleep(150);
             Console.Clear();
             Rainbows(userTextToMakeRainbow);
         }
@@ -109,6 +109,7 @@ namespace Rainbows
         }
         public static void Example()
         {
+            bool thread = true;
             Write("This is what Rainbowify.Write() looks like!");
             Console.WriteLine("You can even use other Write or WriteLines with this function to have them in the same line.");
             WriteLine("This is what Rainbowify.WriteLine() looks like! Like a normal WriteLine it makes it's own line.");
@@ -119,13 +120,15 @@ namespace Rainbows
             Console.ReadKey(true);
             Task task = new Task(() =>
             {
-                while (true)
+                while (thread == true)
                 {
                     Rainbows("This is Rainbowify.Rainbows() press any key to stop");
                 } 
             });
             task.Start();
             Console.ReadKey(true);
+            thread = false;
+            
         }
     }
 }

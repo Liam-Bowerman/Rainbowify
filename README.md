@@ -1,4 +1,4 @@
-## This is a program that makes text into a rainbow (or user specified color)
+## This is a program that makes text into a rainbow or any solid color
 
 This package is only usable in c#.
 
