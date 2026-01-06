@@ -1,14 +1,29 @@
 ## This is a program that makes text into a rainbow (or user specified color)
 
-Make sure your code has "using Rainbows;" in it so you can use Rainbowify corectly!
+This package is only usable in c#.
 
+If there are issues with compatability or if the code isn't working please email ljbowerman09@gmail.com.
 
-The text Entered into Rainbowify WILL NOT continue to change colors after being printed once.
+## Usage
 
-## Usage Example
-- To make rainbow text use "Rainbowify.WriteLine("example text");"
-- For more options you can also use "Rainbowify.Write("example text");"
+``` csharp
+//In order to use Rainbowify you need to make sure you use the power of rainbows! To do so make sure you have the following line in your file:
+using Rainbows;
 
-If you just want a simple way to have different collor text in the console use either of the following lines but make sure to include text and the rgb scale of the color you want:
-- Rainbowify.WriteLineColor("example text", int, int, int);"
-- Rainbowify.WriteColor("example text", int, int, int);"
+//For rainbow text you can use Write or WriteLine just like you would use Console.Write() or Console.WriteLine()
+
+Rainbowify.Write("example text");
+Rainbowify.WriteLine("example text");
+
+//For solid colored text you need to know the RGB numbers of the color you want.
+//The functions for solid color are very simallar.
+
+Rainbowify.WriteColor("example text", int, int, int);
+Rainbowify.WriteLineColor("example text", int, int, int);
+
+//You can also have a line that constantly changes colors, however this line clears everything on the console so no other text will be allowed to print in the terminal/console.
+
+Rainbowify.Rainbows("example text");
+
+//Enjoy Rainbowify and thank you for downloading it!
+```
