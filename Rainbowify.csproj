@@ -4,11 +4,11 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <version>1.1.6</version>
+    <version>1.1.7</version>
     <Description>
-      By using the power of rainbows this NuGet package allows you to make console text rainbow or specific colors using RGB.
+      By using the power of rainbows this NuGet package allows you to make console text rainbow.
+      You can also color text with RGB codes.
       Colored text will only be visible in the console or terminal.
-      In addition to this, you can also color text with alternating colors using "Rainbowify.Rainbows("example text");"
     </Description>
     <PackageIcon>Rainbowify.png</PackageIcon>
     <Nullable>enable</Nullable>

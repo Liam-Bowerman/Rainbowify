@@ -2,7 +2,9 @@
 
 This package is only usable in c#.
 
-If there are issues with compatability or if the code isn't working please email ljbowerman09@gmail.com.
+Text that has been "Rainbowified" cannot become string variables as the functions return nulls and only print the colored text.
+
+If there are issues with compatability or if the code isn't working please email ak3m1.h3art@gmail.com.
 
 ## Usage
 
@@ -24,6 +26,11 @@ Rainbowify.WriteLineColor("example text", int, int, int);
 //You can also have a line that constantly changes colors, however this line clears everything on the console so no other text will be allowed to print in the terminal/console.
 
 Rainbowify.Rainbows("example text");
+
+//To see how it looks in the terminal/console there's now an example function!
+//This will show you specific examples of the functions.
+
+Rainbowify.Example();
 
 //Enjoy Rainbowify and thank you for downloading it!
 ```

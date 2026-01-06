@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 namespace Rainbows
 {
     public class Rainbowify
@@ -105,6 +106,26 @@ namespace Rainbows
             WriteColor(userTextToMakeRainbow, red, green, blue);
             Console.WriteLine("");
             return null;
+        }
+        public static void Example()
+        {
+            Write("This is what Rainbowify.Write() looks like!");
+            Console.WriteLine("You can even use other Write or WriteLines with this function to have them in the same line.");
+            WriteLine("This is what Rainbowify.WriteLine() looks like! Like a normal WriteLine it makes it's own line.");
+            WriteColor("And this is Rainbowify.WriteColor()! With the rgb of 234, 34, 86.", 234, 34, 86);
+            Console.WriteLine("And just like the Rainbowify.Write() function it too can be used with other Write or WriteLine functions.");
+            WriteLineColor("And this is Rainbowify.WriteLineColor()! With the rgb of 62, 43, 255.", 62, 43, 255);
+            Console.WriteLine("To see the alternating rainbow function press any key");
+            Console.ReadKey(true);
+            Task task = new Task(() =>
+            {
+                while (true)
+                {
+                    Rainbows("This is Rainbowify.Rainbows() press any key to stop");
+                } 
+            });
+            task.Start();
+            Console.ReadKey(true);
         }
     }
 }
