@@ -4,7 +4,7 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <version>1.1.7</version>
+    <version>1.2.0</version>
     <Description>
       By using the power of rainbows this NuGet package allows you to make console text rainbow.
       You can also color text with RGB codes.

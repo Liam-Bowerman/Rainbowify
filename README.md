@@ -1,16 +1,32 @@
-## This is a program that makes text into a rainbow or any solid color
+## Summary
 
 This package is only usable in c#.
 
-Text that has been "Rainbowified" cannot become string variables as the functions return nulls and only print the colored text.
+All methods with Write or WriteLine in this project are functions that can be called on their own. They do not need to be called inside of a Console.Write or WriteLine.
 
-If there are issues with compatability or if the code isn't working please email ak3m1.h3art@gmail.com.
+All functions (except for Rainbows()) return a new string value.
+
+## Issues or Suggestions?
+#### If there are issues with compatability or if you have any suggestions please email ak3m1.h3art@gmail.com or contact Akemi through NuGet.
+##
+For a color picker to find an exact rgb value that's easy to use you can use this color picker website:
+- https://htmlcolorcodes.com/color-picker/
 
 ## Usage
 
 ``` csharp
 //In order to use Rainbowify you need to make sure you use the power of rainbows! To do so make sure you have the following line in your file:
 using Rainbows;
+
+//NEW!!!
+//You can now store colored or Rainbowified strings into string variables
+//There is now a function to store a rainbowified or colored string, Store() and StoreColor().
+string newString = Rainbowify.Store("Hello world!");
+//result --> A string variable that says "Hello world!" in rainbow text that you can then call later.
+
+//StoreColor() works the same just with a specific rgb color.
+string newString = Rainbowify.StoreColor("Hello world!", int, int, int);
+//result --> A string variable that says "Hello world!" in any color text that you can then call later.
 
 //For rainbow text you can use Write or WriteLine just like you would use Console.Write() or Console.WriteLine()
 

@@ -3,6 +3,7 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        Rainbowify.Example();
+        string newString = Rainbowify.Store("Hello world!");
+        Console.WriteLine(newString);
     }
 }
