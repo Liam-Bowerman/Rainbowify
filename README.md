@@ -8,9 +8,16 @@ All functions (except for Rainbows()) return a new string value.
 
 ## Issues or Suggestions?
 #### If there are issues with compatability or if you have any suggestions please email ak3m1.h3art@gmail.com or contact Akemi through NuGet.
+
 ##
 For a color picker to find an exact rgb value that's easy to use you can use this color picker website:
 - https://htmlcolorcodes.com/color-picker/
+
+## Updates
+### January 16, 2026:
+Version: 1.2.1
+- Override functions for Color() functions.
+- Updated hover elements
 
 ## Usage
 
@@ -19,7 +26,13 @@ For a color picker to find an exact rgb value that's easy to use you can use thi
 using Rainbows;
 
 //NEW!!!
-//You can now store colored or Rainbowified strings into string variables
+//New overide functions for all Color() functions.
+string newString = Rainbowify.StoreColor("Hello world!", string colorName);
+//The string "colorName" accepts color names.
+//As of right now those colors inclue: red, orange, yellow, green, blue, purple, black, white, pink, gray, cyan, and dark green.
+
+//WriteColor() and WriteLineColor() have also recieved an overide function with the same thing.
+
 //There is now a function to store a rainbowified or colored string, Store() and StoreColor().
 string newString = Rainbowify.Store("Hello world!");
 //result --> A string variable that says "Hello world!" in rainbow text that you can then call later.

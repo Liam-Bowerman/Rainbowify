@@ -99,7 +99,7 @@ namespace Rainbows
             return newS;
         }
         /// <summary>
-        /// A function used to print a string with rainbow text and end the line.
+        /// A function used to print a string with rainbow text and end the line of text.
         /// </summary>
         /// <param name="s">A string whose charecters will be colored the colors of the rainbow.</param>
         /// <returns>A new written string with the same text as the inputed string but with rainbow colored text</returns>
@@ -193,13 +193,13 @@ namespace Rainbows
             }
         }
         /// <summary>
-        /// 
+        /// A function used to write text in any specific color using rgb values within the curent line of text.
         /// </summary>
-        /// <param name="s"></param>
-        /// <param name="red"></param>
-        /// <param name="green"></param>
-        /// <param name="blue"></param>
-        /// <returns></returns>
+        /// <param name="s">A string whose charecters will be printed with a user specified color.</param>
+        /// <param name="red">The integer that decides the red value</param>
+        /// <param name="green">The integer that decides the green value</param>
+        /// <param name="blue">The integer that decides the blue value</param>
+        /// <returns>A string with colored charecters acording to the specified rgb value and inputed string.</returns>
         public static string WriteColor(string s, int red, int green, int blue)
         {
             string newS = "";
@@ -213,13 +213,13 @@ namespace Rainbows
             return newS;
         }
         /// <summary>
-        /// 
+        /// A function used to store a colored string that can be used as a string variable.
         /// </summary>
-        /// <param name="s"></param>
-        /// <param name="red"></param>
-        /// <param name="green"></param>
-        /// <param name="blue"></param>
-        /// <returns></returns>
+        /// <param name="s">A string whose charecters will not be printed but returned</param>
+        /// <param name="red">The integer that decides the red value</param>
+        /// <param name="green">The integer that decides the green value</param>
+        /// <param name="blue">The integer that decides the blue value</param>
+        /// <returns>A colored string to be used as a new string variable.</returns>
         public static string StoreColor(string s, int red, int green, int blue)
         {
             string newS = "";
@@ -232,13 +232,13 @@ namespace Rainbows
             return newS;
         }
         /// <summary>
-        /// 
+        /// A function used to write text in any specific color using rgb values and ends the current line of text.
         /// </summary>
-        /// <param name="s"></param>
-        /// <param name="red"></param>
-        /// <param name="green"></param>
-        /// <param name="blue"></param>
-        /// <returns></returns>
+        /// <param name="s">A string whose charecters will be printed with a user specified color.</param>
+        /// <param name="red">The integer that decides the red value</param>
+        /// <param name="green">The integer that decides the green value</param>
+        /// <param name="blue">The integer that decides the blue value</param>
+        /// <returns>A string with colored charecters acording to the specified rgb value and inputed string.</returns>
         public static string WriteLineColor(string s, int red, int green, int blue)
         {
             string newS = "";
@@ -275,6 +275,276 @@ namespace Rainbows
             task.Start();
             Console.ReadKey(true);
             rainbowsBool = false;
+        }
+        /// <summary>
+        /// An overide verion of the WriteColor() function that uses color names to decide the color of the text.
+        /// </summary>
+        /// <param name="s">A string whose char values will be printed in a color specified by the user.</param>
+        /// <param name="colorName">A color to change the text to.</param>
+        /// <returns>A string with colored charecters acording to the specified color name and inputed string.</returns>
+        public static string WriteColor(string s, string colorName)
+        {
+            int red = 0;
+            int green = 0;
+            int blue = 0;
+            string newS = "";
+            string color = colorName.ToLower();
+            if(color == "red")
+            {
+                red = 255;
+            }
+            else if(color == "orange")
+            {
+                red = 242;
+                green = 136;
+                blue = 29;
+            }
+            else if(color == "yellow")
+            {
+                red = 255;
+                green = 255;
+            }
+            else if(color == "green")
+            {
+                green = 255;
+            }
+            else if(color == "blue")
+            {
+                blue = 255;
+            }
+            else if(color == "purple")
+            {
+                red = 128;
+                blue = 128;
+            }
+            else if(color == "black")
+            {
+                red = 0;
+                blue = 0;
+                green = 0;
+            }
+            else if(color == "white")
+            {
+                red = 255;
+                blue = 255;
+                green = 255;
+            }
+            else if(color == "pink")
+            {
+                red = 255;
+                blue = 192;
+                green = 203;
+            }
+            else if(color == "grey" || color == "gray")
+            {
+                red = 200;
+                blue = 200;
+                green = 200; 
+            }
+            else if(color == "cyan")
+            {
+                green = 255;
+                blue = 255;
+            }
+            else if(color == "dark green")
+            {
+                red = 9;
+                green = 94;
+            }
+            else
+            {
+                red = 255;
+                blue = 255;
+                green = 255;
+            }
+            foreach (char c in s)
+            {
+                string foreColor = "\x1b[38;2" + ";" + red + ";" + green + ";" + blue + "m";
+                Console.Write(foreColor + c);
+                newS += foreColor + c;
+                Console.ForegroundColor = ConsoleColor.White;
+            }
+            return newS;
+        }
+        /// <summary>
+        /// An overide verion of the WriteLineColor() function that uses color names to decide the color of the text and end a line.
+        /// </summary>
+        /// <param name="s">A string whose char values will be printed in a color specified by the user.</param>
+        /// <param name="colorName">A color to change the text to.</param>
+        /// <returns>A string with colored charecters acording to the specified color name and inputed string.</returns>
+        public static string WriteLineColor(string s, string colorName)
+        {
+            int red = 0;
+            int green = 0;
+            int blue = 0;
+            string newS = "";
+            string color = colorName.ToLower();
+            if(color == "red")
+            {
+                red = 255;
+            }
+            else if(color == "orange")
+            {
+                red = 242;
+                green = 136;
+                blue = 29;
+            }
+            else if(color == "yellow")
+            {
+                red = 255;
+                green = 255;
+            }
+            else if(color == "green")
+            {
+                green = 255;
+            }
+            else if(color == "blue")
+            {
+                blue = 255;
+            }
+            else if(color == "purple")
+            {
+                red = 128;
+                blue = 128;
+            }
+            else if(color == "black")
+            {
+                red = 0;
+                blue = 0;
+                green = 0;
+            }
+            else if(color == "white")
+            {
+                red = 255;
+                blue = 255;
+                green = 255;
+            }
+            else if(color == "pink")
+            {
+                red = 255;
+                blue = 192;
+                green = 203;
+            }
+            else if(color == "grey" || color == "gray")
+            {
+                red = 200;
+                blue = 200;
+                green = 200; 
+            }
+            else if(color == "cyan")
+            {
+                green = 255;
+                blue = 255;
+            }
+            else if(color == "dark green")
+            {
+                red = 9;
+                green = 94;
+            }
+            else
+            {
+                red = 255;
+                blue = 255;
+                green = 255;
+            }
+            foreach (char c in s)
+            {
+                string foreColor = "\x1b[38;2" + ";" + red + ";" + green + ";" + blue + "m";
+                Console.Write(foreColor + c);
+                newS += foreColor + c;
+                Console.ForegroundColor = ConsoleColor.White;
+            }
+            Console.WriteLine("");
+            return newS;
+        }
+        /// <summary>
+        /// An override function for StoreColor that uses a string value to decide the color of the text.
+        /// </summary>
+        /// <param name="s">A string whose char values will be printed in a color specified by the user.</param>
+        /// <param name="colorName">A color to change the text to.</param>
+        /// <returns>A colored string to be used as a new string variable.</returns>
+        public static string StoreColor(string s, string colorName)
+        {
+            int red = 0;
+            int green = 0;
+            int blue = 0;
+            string newS = "";
+            string color = colorName.ToLower();
+            if(color == "red")
+            {
+                red = 255;
+            }
+            else if(color == "orange")
+            {
+                red = 242;
+                green = 136;
+                blue = 29;
+            }
+            else if(color == "yellow")
+            {
+                red = 255;
+                green = 255;
+            }
+            else if(color == "green")
+            {
+                green = 255;
+            }
+            else if(color == "blue")
+            {
+                blue = 255;
+            }
+            else if(color == "purple")
+            {
+                red = 128;
+                blue = 128;
+            }
+            else if(color == "black")
+            {
+                red = 0;
+                blue = 0;
+                green = 0;
+            }
+            else if(color == "white")
+            {
+                red = 255;
+                blue = 255;
+                green = 255;
+            }
+            else if(color == "pink")
+            {
+                red = 255;
+                blue = 192;
+                green = 203;
+            }
+            else if(color == "grey" || color == "gray")
+            {
+                red = 200;
+                blue = 200;
+                green = 200; 
+            }
+            else if(color == "cyan")
+            {
+                green = 255;
+                blue = 255;
+            }
+            else if(color == "dark green")
+            {
+                red = 9;
+                green = 94;
+            }
+            else
+            {
+                red = 255;
+                blue = 255;
+                green = 255;
+            }
+            foreach (char c in s)
+            {
+                string foreColor = "\x1b[38;2" + ";" + red + ";" + green + ";" + blue + "m";
+                newS += foreColor + c;
+                Console.ForegroundColor = ConsoleColor.White;
+            }
+            return newS;
         }
     }
 }
