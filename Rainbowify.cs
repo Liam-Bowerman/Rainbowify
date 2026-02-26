@@ -3,7 +3,7 @@ namespace Rainbows
 {
     public class Rainbowify
     {
-        public static bool rainbowsBool = true; 
+        public static bool rainbowsBool = true;
         private static int i = 1;
         //Rainbowify.Write() and Rainbowify.WriteLine() work the same as Console.Write() and Console.WriteLine() *essentially
 
@@ -89,6 +89,8 @@ namespace Rainbows
                         break;
                 }
                 newS += foreColor + c;
+                foreColor = "\x1b[38;2" + ";" + 255 + ";" + 255 + ";" + 255 + "m";
+                newS += foreColor;
                 i++;
                 if (i > 6)
                 {
@@ -187,11 +189,202 @@ namespace Rainbows
             }
             Thread.Sleep(150);
             Console.Clear();
-            while(rainbowsBool == true)
+            while (rainbowsBool == true)
             {
                 Rainbows(s);
             }
         }
+        public static void RainbowsWithDisplay(string s, string[] displayStrings, int[]? colors)
+        {
+            string returnedString = "";
+
+            foreach (char c in s)
+            {
+                string foreColor = "\x1b[38;2" + ";" + 255 + ";" + 0 + ";" + 0 + "m";
+                switch (i)
+                {
+                    case 1:
+                        foreColor = "\x1b[38;2" + ";" + 255 + ";" + 0 + ";" + 0 + "m";
+                        break;
+                    case 2:
+                        foreColor = "\x1b[38;2" + ";" + 242 + ";" + 136 + ";" + 29 + "m";
+                        break;
+                    case 3:
+                        foreColor = "\x1b[38;2" + ";" + 255 + ";" + 255 + ";" + 0 + "m";
+                        break;
+                    case 4:
+                        foreColor = "\x1b[38;2" + ";" + 0 + ";" + 255 + ";" + 0 + "m";
+                        break;
+                    case 5:
+                        foreColor = "\x1b[38;2" + ";" + 0 + ";" + 0 + ";" + 255 + "m";
+                        break;
+                    case 6:
+                        foreColor = "\x1b[38;2" + ";" + 128 + ";" + 0 + ";" + 128 + "m";
+                        break;
+                    default:
+                        break;
+                }
+                returnedString += foreColor + c;
+                i++;
+                if (i > 6)
+                {
+                    i = 1;
+                }
+            }
+            Console.WriteLine(returnedString);
+            int j = 0;
+            for (int x = 0; x < displayStrings.Length; x++)
+            {
+                if (x >= colors.Length)
+                {
+                    j = 0;
+                }
+                switch (colors[j])
+                {
+                    case 1:
+                        WriteLineColor($"{displayStrings[x]}", "red");
+                        break;
+                    case 2:
+                        WriteLineColor($"{displayStrings[x]}", "orange");
+                        break;
+                    case 3:
+                        WriteLineColor($"{displayStrings[x]}", "yellow");
+                        break;
+                    case 4:
+                        WriteLineColor($"{displayStrings[x]}", "green");
+                        break;
+                    case 5:
+                        WriteLineColor($"{displayStrings[x]}", "blue");
+                        break;
+                    case 6:
+                        WriteLineColor($"{displayStrings[x]}", "purple");
+                        break;
+                    case 7:
+                        WriteLineColor($"{displayStrings[x]}", "black");
+                        break;
+                    case 8:
+                        WriteLineColor($"{displayStrings[x]}", "gray");
+                        break;
+                    default:
+                        WriteLineColor($"{displayStrings[x]}", "white");
+                        break;
+                }
+                j++;
+                Console.ForegroundColor = ConsoleColor.White;
+            }
+            Thread.Sleep(150);
+            Console.Clear();
+            while (rainbowsBool == true)
+            {
+                RainbowsWithDisplay(s, displayStrings, colors);
+            }
+        }
+        /// <summary>
+        /// A function that shows a string that changes colors constantly while printing an array of strings beneath it.
+        /// </summary>
+        /// <param name="s">A string that will constantly change colors</param>
+        /// <param name="displayStrings">An array of strings that will be printed after the rainbow string</param>
+        public static void RainbowsWithDisplay(string s, string[] displayStrings)
+        {
+            string returnedString = "";
+
+            foreach (char c in s)
+            {
+                string foreColor = "\x1b[38;2" + ";" + 255 + ";" + 0 + ";" + 0 + "m";
+                switch (i)
+                {
+                    case 1:
+                        foreColor = "\x1b[38;2" + ";" + 255 + ";" + 0 + ";" + 0 + "m";
+                        break;
+                    case 2:
+                        foreColor = "\x1b[38;2" + ";" + 242 + ";" + 136 + ";" + 29 + "m";
+                        break;
+                    case 3:
+                        foreColor = "\x1b[38;2" + ";" + 255 + ";" + 255 + ";" + 0 + "m";
+                        break;
+                    case 4:
+                        foreColor = "\x1b[38;2" + ";" + 0 + ";" + 255 + ";" + 0 + "m";
+                        break;
+                    case 5:
+                        foreColor = "\x1b[38;2" + ";" + 0 + ";" + 0 + ";" + 255 + "m";
+                        break;
+                    case 6:
+                        foreColor = "\x1b[38;2" + ";" + 128 + ";" + 0 + ";" + 128 + "m";
+                        break;
+                    default:
+                        break;
+                }
+                returnedString += foreColor + c;
+                i++;
+                if (i > 6)
+                {
+                    i = 1;
+                }
+            }
+            Console.WriteLine(returnedString);
+            for (int x = 0; x < displayStrings.Length; x++)
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine(displayStrings[x]);
+            }
+            Thread.Sleep(150);
+            Console.Clear();
+            while (rainbowsBool == true)
+            {
+                RainbowsWithDisplay(s, displayStrings);
+            }
+        }
+        /// <summary>
+        /// A function that turns a string array into color changing lines of text within the console.
+        /// </summary>
+        /// <param name="s">An array of strings whose string will be printed with the current color of the rainbow.</param>
+        public static void RainbowDisplay(string[] s)
+        {
+            string foreColor = "\x1b[38;2" + ";" + 255 + ";" + 0 + ";" + 0 + "m";
+            foreach (string newS in s)
+            {
+                switch (i)
+                {
+                    case 1:
+                        foreColor = "\x1b[38;2" + ";" + 255 + ";" + 0 + ";" + 0 + "m";
+                        break;
+                    case 2:
+                        foreColor = "\x1b[38;2" + ";" + 242 + ";" + 136 + ";" + 29 + "m";
+                        break;
+                    case 3:
+                        foreColor = "\x1b[38;2" + ";" + 255 + ";" + 255 + ";" + 0 + "m";
+                        break;
+                    case 4:
+                        foreColor = "\x1b[38;2" + ";" + 0 + ";" + 255 + ";" + 0 + "m";
+                        break;
+                    case 5:
+                        foreColor = "\x1b[38;2" + ";" + 0 + ";" + 0 + ";" + 255 + "m";
+                        break;
+                    case 6:
+                        foreColor = "\x1b[38;2" + ";" + 128 + ";" + 0 + ";" + 128 + "m";
+                        break;
+                    default:
+                        break;
+                }
+            }
+            Console.Write(foreColor);
+            for (int x = 0; x < s.Length; x++)
+            {
+                Console.WriteLine(s[x]);
+            }
+            Thread.Sleep(150);
+            Console.Clear();
+            i++;
+            if (i > 6)
+            {
+                i = 1;
+            }
+            while (rainbowsBool == true)
+            {
+                RainbowDisplay(s);
+            }
+        }
+        
         /// <summary>
         /// A function used to write text in any specific color using rgb values within the curent line of text.
         /// </summary>
@@ -227,8 +420,10 @@ namespace Rainbows
             {
                 string foreColor = "\x1b[38;2" + ";" + red + ";" + green + ";" + blue + "m";
                 newS += foreColor + c;
-                Console.ForegroundColor = ConsoleColor.White;
+                foreColor = "\x1b[38;2" + ";" + 255 + ";" + 255 + ";" + 255 + "m";
+                newS += foreColor;
             }
+            Console.ForegroundColor = ConsoleColor.White;
             return newS;
         }
         /// <summary>
@@ -270,7 +465,7 @@ namespace Rainbows
                 while (true)
                 {
                     Rainbows("This is Rainbowify.Rainbows() press any key to stop");
-                } 
+                }
             });
             task.Start();
             Console.ReadKey(true);
@@ -289,64 +484,64 @@ namespace Rainbows
             int blue = 0;
             string newS = "";
             string color = colorName.ToLower();
-            if(color == "red")
+            if (color == "red")
             {
                 red = 255;
             }
-            else if(color == "orange")
+            else if (color == "orange")
             {
                 red = 242;
                 green = 136;
                 blue = 29;
             }
-            else if(color == "yellow")
+            else if (color == "yellow")
             {
                 red = 255;
                 green = 255;
             }
-            else if(color == "green")
+            else if (color == "green")
             {
                 green = 255;
             }
-            else if(color == "blue")
+            else if (color == "blue")
             {
                 blue = 255;
             }
-            else if(color == "purple")
+            else if (color == "purple")
             {
                 red = 128;
                 blue = 128;
             }
-            else if(color == "black")
+            else if (color == "black")
             {
                 red = 0;
                 blue = 0;
                 green = 0;
             }
-            else if(color == "white")
+            else if (color == "white")
             {
                 red = 255;
                 blue = 255;
                 green = 255;
             }
-            else if(color == "pink")
+            else if (color == "pink")
             {
                 red = 255;
                 blue = 192;
                 green = 203;
             }
-            else if(color == "grey" || color == "gray")
+            else if (color == "grey" || color == "gray")
             {
                 red = 200;
                 blue = 200;
-                green = 200; 
+                green = 200;
             }
-            else if(color == "cyan")
+            else if (color == "cyan")
             {
                 green = 255;
                 blue = 255;
             }
-            else if(color == "dark green")
+            else if (color == "dark green")
             {
                 red = 9;
                 green = 94;
@@ -379,64 +574,64 @@ namespace Rainbows
             int blue = 0;
             string newS = "";
             string color = colorName.ToLower();
-            if(color == "red")
+            if (color == "red")
             {
                 red = 255;
             }
-            else if(color == "orange")
+            else if (color == "orange")
             {
                 red = 242;
                 green = 136;
                 blue = 29;
             }
-            else if(color == "yellow")
+            else if (color == "yellow")
             {
                 red = 255;
                 green = 255;
             }
-            else if(color == "green")
+            else if (color == "green")
             {
                 green = 255;
             }
-            else if(color == "blue")
+            else if (color == "blue")
             {
                 blue = 255;
             }
-            else if(color == "purple")
+            else if (color == "purple")
             {
                 red = 128;
                 blue = 128;
             }
-            else if(color == "black")
+            else if (color == "black")
             {
                 red = 0;
                 blue = 0;
                 green = 0;
             }
-            else if(color == "white")
+            else if (color == "white")
             {
                 red = 255;
                 blue = 255;
                 green = 255;
             }
-            else if(color == "pink")
+            else if (color == "pink")
             {
                 red = 255;
                 blue = 192;
                 green = 203;
             }
-            else if(color == "grey" || color == "gray")
+            else if (color == "grey" || color == "gray")
             {
                 red = 200;
                 blue = 200;
-                green = 200; 
+                green = 200;
             }
-            else if(color == "cyan")
+            else if (color == "cyan")
             {
                 green = 255;
                 blue = 255;
             }
-            else if(color == "dark green")
+            else if (color == "dark green")
             {
                 red = 9;
                 green = 94;
@@ -470,64 +665,64 @@ namespace Rainbows
             int blue = 0;
             string newS = "";
             string color = colorName.ToLower();
-            if(color == "red")
+            if (color == "red")
             {
                 red = 255;
             }
-            else if(color == "orange")
+            else if (color == "orange")
             {
                 red = 242;
                 green = 136;
                 blue = 29;
             }
-            else if(color == "yellow")
+            else if (color == "yellow")
             {
                 red = 255;
                 green = 255;
             }
-            else if(color == "green")
+            else if (color == "green")
             {
                 green = 255;
             }
-            else if(color == "blue")
+            else if (color == "blue")
             {
                 blue = 255;
             }
-            else if(color == "purple")
+            else if (color == "purple")
             {
                 red = 128;
                 blue = 128;
             }
-            else if(color == "black")
+            else if (color == "black")
             {
                 red = 0;
                 blue = 0;
                 green = 0;
             }
-            else if(color == "white")
+            else if (color == "white")
             {
                 red = 255;
                 blue = 255;
                 green = 255;
             }
-            else if(color == "pink")
+            else if (color == "pink")
             {
                 red = 255;
                 blue = 192;
                 green = 203;
             }
-            else if(color == "grey" || color == "gray")
+            else if (color == "grey" || color == "gray")
             {
                 red = 200;
                 blue = 200;
-                green = 200; 
+                green = 200;
             }
-            else if(color == "cyan")
+            else if (color == "cyan")
             {
                 green = 255;
                 blue = 255;
             }
-            else if(color == "dark green")
+            else if (color == "dark green")
             {
                 red = 9;
                 green = 94;
@@ -542,8 +737,10 @@ namespace Rainbows
             {
                 string foreColor = "\x1b[38;2" + ";" + red + ";" + green + ";" + blue + "m";
                 newS += foreColor + c;
-                Console.ForegroundColor = ConsoleColor.White;
+                foreColor = "\x1b[38;2" + ";" + 255 + ";" + 255 + ";" + 255 + "m";
+                newS += foreColor;
             }
+            Console.ForegroundColor = ConsoleColor.White;
             return newS;
         }
     }
